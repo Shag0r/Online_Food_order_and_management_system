@@ -3,20 +3,56 @@
 @{
 }
 <div class="container p-3">
-    <div class="row pt-4">
+    <div class="row pt-4 d-flex justify-content-between">
         <div class="col-6">
-            <h2 class="text-primary">Category List</h2>
+            <h2 class="text-body">Category List</h2>
         </div>
-        <div class="col-6">
-
+        <div class="col-6 text-end">
+            <a asp-page="create" class="btn btn-primary "> <i class="bi bi-clipboard-plus-fill"></i> Create New category</a>
         </div>
     </div>
     <br /><br />
-    <table class="table table-border">
-        <thead>
+    
+    <table class="table table-bordered  text-center " >
+        <thead >
+            <tr>
+                <th></th>
+              
+               <th>
+                    Category Name
+               </th>
+               <th>
+                   Display Order
+               </th>
+                <th> <i class="bi bi-gear-wide-connected"></i> Action</th>
+            </tr>
 
         </thead>
+        <tbody  >
+            @foreach (var i in Model.Categoties)
+            {
+
+
+                <tr>
+                    <th><i class="bi bi-bookmark-star-fill"></i></th>
+                   
+                <td>
+                    @i.Name
+                </td>
+                <td>
+                    @i.DisplayOrder
+                </td>
+                <td>
+                    
+                            <a asp-page="Edit" class="btn btn-outline-warning"><i class="bi bi-vector-pen"></i></a>
+                            <a asp-page="Delete" class="btn btn-outline-danger"><i class="bi bi-trash3-fill"></i></a>
+                    
+                </td>
+            </tr>
+            }
+        </tbody>
 
     </table>
+   
 
 </div>
