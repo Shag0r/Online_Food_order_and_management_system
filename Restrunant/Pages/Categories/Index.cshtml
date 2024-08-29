@@ -2,8 +2,8 @@
 @model Restrunant.Pages.Categoties.IndexModel
 @{
 }
-<div class="container p-3">
-    <div class="row pt-4 d-flex justify-content-between">
+<div class="container p-4  border border-0 border-body rounded " style="box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5);">
+    <div class="row pt-4 d-flex justify-content-between ">
         <div class="col-6">
             <h2 class="text-body">Category List</h2>
         </div>
@@ -13,7 +13,7 @@
     </div>
     <br /><br />
     
-    <table class="table table-bordered  text-center " >
+    <table class="table   text-center " >
         <thead >
             <tr>
                 <th></th>
@@ -44,8 +44,8 @@
                 </td>
                 <td>
                     
-                            <a asp-page="Edit" class="btn btn-outline-warning"><i class="bi bi-vector-pen"></i></a>
-                            <a asp-page="Delete" class="btn btn-outline-danger"><i class="bi bi-trash3-fill"></i></a>
+                            <a asp-page="Edit" asp-route-Id="@i.Id" class="btn btn-outline-warning"><i class="bi bi-vector-pen"></i></a>
+                        <a asp-page="Delete" asp-route-Id="@i.Id" class="btn btn-outline-danger"><i class="bi bi-trash3-fill"></i></a>
                     
                 </td>
             </tr>
