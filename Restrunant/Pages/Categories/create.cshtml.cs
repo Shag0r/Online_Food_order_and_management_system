@@ -1,10 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using Models;
 using Restrunant.Data;
-
+using Restrunant.Model;
 
 namespace Restrunant.Pages.Categories
 {
@@ -13,7 +11,6 @@ namespace Restrunant.Pages.Categories
     {
         //connecting to db
         private readonly ApplicationDBContext _db;
-        int count = 0;
 
 
         public Category Category { get; set; }
@@ -31,24 +28,14 @@ namespace Restrunant.Pages.Categories
 
         public async Task<IActionResult> OnPost()
         {
-            
+            if (ModelState.IsValid)
+            {
                 await _db.Category.AddAsync(Category);
                 await _db.SaveChangesAsync();
-            count=count+1;
-            if (count > 0)
-            {
-
-                TempData["success"] = "Record Created Successfully";
                 return RedirectToPage("Index");
             }
-            else
-            {
-                ModelState.Clear();
-                return Page();
-
-            }
-            
-          
+           ModelState.Clear();
+            return Page();
             
 
         }

@@ -2,8 +2,6 @@
 @model Restrunant.Pages.Categoties.IndexModel
 @{
 }
-<partial name="_Notification" />
-
 <div class="container p-3">
     <div class="row pt-4 d-flex justify-content-between">
         <div class="col-6">
@@ -18,7 +16,7 @@
     <table class="table table-bordered  text-center " >
         <thead >
             <tr>
-                <th> ID</th>
+                <th></th>
               
                <th>
                     Category Name
@@ -36,7 +34,7 @@
 
 
                 <tr>
-                    <th><i class="bi bi-bookmark-star-fill"></i> @i.Id</th>
+                    <th><i class="bi bi-bookmark-star-fill"></i></th>
                    
                 <td>
                     @i.Name
@@ -46,9 +44,10 @@
                 </td>
                 <td>
                     
-                        <a asp-page="Edit" asp-route-id="@i.Id"  class="btn btn-outline-warning"><i class="bi bi-vector-pen"></i></a>
-                        <a asp-page="Delete" asp-route-id="@i.Id"  class="btn btn-outline-danger"><i class="bi bi-trash3-fill"></i></a>
-                       
+                            <a asp-page="Edit" class="btn btn-outline-warning"><i class="bi bi-vector-pen"></i></a>
+                            <a asp-page="Delete" class="btn btn-outline-danger"><i class="bi bi-trash3-fill"></i></a>
+                    
+                </td>
             </tr>
             }
         </tbody>
@@ -57,4 +56,3 @@
    
 
 </div>
-

@@ -10,6 +10,5 @@ namespace Restrunant.Data
             
         }
         public DbSet<Category> Category{ get; set; }
-        public DbSet<BackUpCatagory> BackCatagory{ get; set; }
     }
 }
