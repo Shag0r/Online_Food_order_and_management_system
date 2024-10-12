@@ -1,14 +1,14 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Restrunant.Data;
-using Restrunant.Model;
+using Restrunant.DataAccess.Data;
+using Restrunant.Models;
 
-namespace Restrunant.Pages.Categories
+namespace Restrunant.Pages.Admin.Categories
 {
     [BindProperties]
     public class DeleteModel : PageModel
     {
-        private readonly ApplicationDBContext _db;
+        private readonly DataAccess.Data.ApplicationDBContext _db;
         public int count = 0;
 
         public Category Category { get; set; }

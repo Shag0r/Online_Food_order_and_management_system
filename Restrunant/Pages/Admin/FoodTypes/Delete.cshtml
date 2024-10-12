@@ -1,0 +1,26 @@
+﻿@page
+@model Restrunant.Pages.Admin.FoodTypes.DeleteModel
+@{
+}
+<partial name="_Notification" />
+<form method="post">
+    <div class="border text-center p-3 mt-4 shadow-lg rounded bg-secondary">
+        <div class="row pb-2">
+            <h2 class="text-body pt-3">Delete Food Type</h2>
+            <hr />
+        </div>
+        <input type="hidden" asp-for="@Model.food.Id" />
+        <div class="d-flex w-100 gap-2">
+            <div class="mb-3 w-50">
+                <label asp-for="food.Name">Name</label>
+                <input class="form-control" type="text" asp-for="@Model.food.Name" readonly/>
+                <span asp-validation-for="food.Name"></span>
+
+            </div>
+           
+        </div>
+
+        <button type="submit" class="btn btn-danger w-100">Delete</button>
+
+    </div>
+</form>

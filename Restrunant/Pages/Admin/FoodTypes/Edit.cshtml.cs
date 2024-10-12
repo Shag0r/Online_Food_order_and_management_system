@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Restrunant.Data;
-using Restrunant.Model;
+using Restrunant.DataAccess.Data;
+using Restrunant.Models;
 
-namespace Restrunant.Pages.Categories
+namespace Restrunant.Pages.Admin.FoodTypes
 {
     [BindProperties]
     public class EditModel : PageModel
@@ -11,7 +11,7 @@ namespace Restrunant.Pages.Categories
         private readonly ApplicationDBContext _db;
         public int count = 0;
         
-        public Category Category { get; set; }
+        public FoodType food { get; set; }
         public EditModel(ApplicationDBContext db)
         {
             _db = db;
@@ -19,13 +19,13 @@ namespace Restrunant.Pages.Categories
         }
         public void OnGet(int id )
         {
-            Category = _db.Category.Find(id);
+            food = _db.FoodType.Find(id);
 
         }
         public async Task<IActionResult> OnPost()
         {
 
-            _db.Category.Update(Category);
+            _db.FoodType.Update(food);
             await _db.SaveChangesAsync();
             count = count + 1;
             if (count > 0)

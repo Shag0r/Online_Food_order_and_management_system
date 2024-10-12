@@ -7,7 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Pages\Categories\Edit.cshtml" />
+    <Content Remove="Pages\Admin\FoodTypes\Edit.cshtml" />
+    <Content Remove="Pages\Admin\Categories\Edit.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,15 +22,20 @@
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Pages\Categories\Edit.cshtml" />
+    <UpToDateCheckInput Remove="Pages\Admin\Categories\Edit.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
-    <_ContentIncludedByDefault Remove="Pages\Categories\Edit.cshtml" />
+    <_ContentIncludedByDefault Remove="Pages\Admin\Categories\Edit.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Pages\Categories\Edit.cshtml" />
+    <None Include="Pages\Admin\FoodTypes\Edit.cshtml" />
+    <None Include="Pages\Admin\Categories\Edit.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Restrunant.DataAccess\Restrunant.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>

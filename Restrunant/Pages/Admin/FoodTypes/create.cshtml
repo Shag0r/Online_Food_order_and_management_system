@@ -1,0 +1,25 @@
+﻿@page
+@model Restrunant.Pages.Admin.FoodTypes.createModel
+@{
+}
+<partial name="_Notification" />
+<form method="post">
+    <div class="border text-center p-3 mt-4 shadow-lg rounded bg-secondary">
+        <div class="row pb-2">
+            <h2 class="text-body pt-3">Create Food Type</h2>
+            <hr />
+        </div>
+        <div class="d-flex w-100 gap-2">
+            <div class="mb-3 w-100">
+                <label asp-for="food.Name">Name</label>
+                <input class="form-control" type="text" asp-for="@Model.food.Name" />
+                <span asp-validation-for="food.Name"></span>
+
+            </div>
+           
+        </div>
+      
+        <button type="submit" class="btn btn-success w-100">Create</button>
+        
+    </div>
+</form>

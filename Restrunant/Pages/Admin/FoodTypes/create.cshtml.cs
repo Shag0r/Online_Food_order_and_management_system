@@ -1,10 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using Restrunant.Data;
-using Restrunant.Model;
+using Restrunant.DataAccess.Data;
+using Restrunant.Models;
 
-namespace Restrunant.Pages.Categories
+
+namespace Restrunant.Pages.Admin.FoodTypes
 {
     [BindProperties]
     public class createModel : PageModel
@@ -14,7 +15,7 @@ namespace Restrunant.Pages.Categories
         public int count = 0;
 
 
-        public Category Category { get; set; }
+        public FoodType food { get; set; }
 
         public createModel(ApplicationDBContext db)
         {
@@ -30,7 +31,7 @@ namespace Restrunant.Pages.Categories
         public async Task<IActionResult> OnPost()
         {
             
-                await _db.Category.AddAsync(Category);
+                await _db.FoodType.AddAsync(food);
                 await _db.SaveChangesAsync();
             count=count+1;
             if (count > 0)

@@ -1,14 +1,14 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Restrunant.Data;
-using Restrunant.Model;
+using Restrunant.DataAccess.Data;
+using Restrunant.Models;
 
-namespace Restrunant.Pages.Categoties
+namespace Restrunant.Pages.Admin.FoodTypes
 {
     public class IndexModel : PageModel
     {
         private readonly ApplicationDBContext _db;
-        public IEnumerable<Category> Categoties { get; set; }
+        public IEnumerable<FoodType> food { get; set; }
         public IndexModel(ApplicationDBContext db)
         {
             _db = db;
@@ -16,7 +16,7 @@ namespace Restrunant.Pages.Categoties
         }
         public void OnGet()
         {
-            Categoties = _db.Category;
+            food = _db.FoodType;
         }
     }
 }

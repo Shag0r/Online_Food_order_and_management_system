@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using Restrunant.Data;
+
+using Restrunant.DataAccess.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
